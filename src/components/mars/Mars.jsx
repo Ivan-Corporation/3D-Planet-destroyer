@@ -7,13 +7,12 @@ import EarthDayMap from "../../assets/textures/8k_earth_daymap.jpg";
 import EarthNormalMap from "../../assets/textures/8k_earth_normal_map.jpg";
 import EarthSpecularMap from "../../assets/textures/8k_earth_specular_map.jpg";
 import EarthCloudsMap from "../../assets/textures/8k_earth_clouds.jpg";
-import LavaMap from "../../assets/textures/magma2.jpg";
 import { TextureLoader } from "three";
 
-export function DestroyedEarth(props) {
-  const [EarthLavaMap, normalMap, specularMap, cloudsMap] = useLoader(
+export function Mars(props) {
+  const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
     TextureLoader,
-    [LavaMap, EarthNormalMap, EarthSpecularMap]
+    [EarthDayMap, EarthNormalMap, EarthSpecularMap, EarthCloudsMap]
   );
 
   const earthRef = useRef();
@@ -52,7 +51,7 @@ export function DestroyedEarth(props) {
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
-          map={EarthLavaMap}
+          map={colorMap}
           normalMap={normalMap}
           metalness={0.4}
           roughness={0.7}

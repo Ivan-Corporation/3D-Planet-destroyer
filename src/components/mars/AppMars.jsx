@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Earth } from "./components/earth/Earth";
-import { TopSection } from "./components/topSection/FrontGround";
-import { DestroyedEarth } from "./components/earth/DestroyedEarth";
+import { Mars } from "./Mars";
+import { TopSection } from "./MarsFrontGround";
+import { DestroyedMars} from "./DestroyedMars";
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, fade, room } from "react-tiger-transition";
 
@@ -21,6 +21,7 @@ room({
   name: 'cube-right',
   direction: 'right'
 });
+
 
 
 const CanvasContainer = styled.div`
@@ -62,6 +63,7 @@ const DonateButton = styled.button`
   }
 `;
 
+
 const ArrowUp = styled.button`
   outline: none;
   border: none;
@@ -85,7 +87,7 @@ const ArrowUp = styled.button`
   }
 `;
 
-function App() {
+function AppMars() {
 
   const [destroy, setDestroy] = useState(false)
 
@@ -98,13 +100,13 @@ function App() {
   return (
     <CanvasContainer>
       <TopSectionContainer>
-      <ArrowUp><Link to='/mars' transition='cube-right'>MARS</Link></ArrowUp>
       <TopSection />
+      <ArrowUp><Link to='/earth' transition='cube-right'>MARS</Link></ArrowUp>
       <DonateButton onClick={handleDestroy}>Destroy</DonateButton>
       </TopSectionContainer>
       <Canvas>
         <Suspense fallback={null}>
-          {!destroy ? <Earth /> : <DestroyedEarth/>}
+          {!destroy ? <Mars /> : <DestroyedMars/>}
           
 
           
@@ -116,4 +118,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppMars;

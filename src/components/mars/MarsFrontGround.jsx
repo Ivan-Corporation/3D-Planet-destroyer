@@ -57,8 +57,8 @@ const DonateButton = styled.button`
 const MadeBy = styled.h3`
   color: #fff;
   position: fixed;
-  bottom: 5px;
-  left: 50%;
+  top: 5px;
+  right: 10px;
   transform: translateX(-50%);
 `;
 
@@ -67,14 +67,14 @@ export function TopSection() {
  
   return (
     <TopSectionContainer>
-      <Logo>Global Warming</Logo>
+      <Logo>MARS</Logo>
       <Slogan>Keep it cool for safe living</Slogan>
       
      
 
 
       <MadeBy>
-        <a target='_blank' rel="noreferrer" href='https://github.com/Ivan-Corporation/3dEarth' style={{textDecoration:'none', color:'white'}}>Github</a>
+        <a target='_blank' rel="noreferrer" href='https://github.com/Ivan-Corporation/3D-Planet-destroyer' style={{textDecoration:'none', color:'white'}}><img style={{width:'50px', height:'50px'}} src='https://www.pnguniverse.com/wp-content/uploads/2020/10/GitHub-logo.png'/></a>
       </MadeBy>
     </TopSectionContainer>
   );
