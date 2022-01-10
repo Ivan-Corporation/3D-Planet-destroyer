@@ -27,7 +27,7 @@ export function DestroyedEarth(props) {
   return (
     <>
       {/* <ambientLight intensity={1} /> */}
-      <pointLight color="#f6f3ea" position={[2, 0, 5]} intensity={1.2} />
+      <pointLight color="#f6f3ea" position={[2, 0, 5]} intensity={2.9} />
       <Stars
         radius={300}
         depth={60}
@@ -42,7 +42,7 @@ export function DestroyedEarth(props) {
         <meshPhongMaterial />
         <meshStandardMaterial
           map={EarthLavaMap}
-          metalness={0.4}
+          metalness={0.1}
           roughness={0.7}
         />
         <OrbitControls

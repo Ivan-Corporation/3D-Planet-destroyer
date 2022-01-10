@@ -15,6 +15,9 @@ import App from './App';
 import AppMars from './components/mars/AppMars';
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, fade, room } from "react-tiger-transition";
+import AppVenus from './components/venus/AppVenus';
+import AppMercury from './components/mercury/AppMercury';
+import AppJupiter from './components/jupiter/AppJupiter';
 
 
 
@@ -39,6 +42,21 @@ export default function Main() {
                 exact path="/mars"
                 screen 
         ><AppMars/>
+        </Route>
+        <Route  
+                exact path="/venus"
+                screen 
+        ><AppVenus/>
+        </Route>
+        <Route  
+                exact path="/mercury"
+                screen 
+        ><AppMercury/>
+        </Route>
+        <Route  
+                exact path="/jupiter"
+                screen 
+        ><AppJupiter/>
         </Route>
       </Navigation>
       </BrowserRouter>

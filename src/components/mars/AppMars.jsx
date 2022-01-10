@@ -11,6 +11,7 @@ import { keyframes} from "styled-components"
 import arrowbottom from '../../assets/img/arrowbottom.png'
 import arrowup from '../../assets/img/arrowup.png'
 import Loader from '../../Loader'
+import '../../assets/styles/camerabutton.css'
 
 // inject glide styles
 
@@ -18,6 +19,11 @@ import Loader from '../../Loader'
 glide({
   name: 'glide-top',
   direction: 'top',
+
+});
+glide({
+  name: 'glide-bottom',
+  direction: 'bottom',
 
 });
 
@@ -144,7 +150,25 @@ function AppMars() {
 
   return (
     <>
-      <HideTopContainer>{!containerVisibility ? <button onClick={hideTopContainer}>Click</button> : <button onClick={showTopContainer}>Click</button>}</HideTopContainer>
+     <HideTopContainer>
+        {!containerVisibility ? 
+
+        <div onClick={hideTopContainer} class="button" id="button-7">
+        <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
+        <p>Look at planet</p>
+        </div>
+      
+      : 
+      
+      <div onClick={showTopContainer} class="button" id="button-7">
+      <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
+      <p>Back</p>
+      </div>
+      }
+      </HideTopContainer>
+ 
+ 
+ 
       {!containerVisibility ? <TopSectionContainer>
       <TopSection />
 
@@ -152,7 +176,7 @@ function AppMars() {
 
       <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Jupiter ♃</p>
       <ArrowUp>
-      <Link to='/mars' transition='glide-bottom' >
+      <Link to='/mars' transition='glide-top' >
         <Rotate>
         <img src={arrowbottom} style={{width: '100px' }}/>
         </Rotate></Link></ArrowUp>
@@ -161,7 +185,7 @@ function AppMars() {
 
       <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Earth ♁</p>
       <ArrowBottom>
-      <Link to='/' transition='glide-bottom' >
+      <Link to='/' transition='glide-top' >
         <Rotate>
         <img src={arrowup} style={{width: '100px', }}/>
         </Rotate></Link></ArrowBottom>

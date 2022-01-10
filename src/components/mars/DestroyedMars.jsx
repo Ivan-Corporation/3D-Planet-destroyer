@@ -41,7 +41,7 @@ export function DestroyedMars(props) {
         <meshStandardMaterial
           map={EarthLavaMap}
           normalMap={normalMap}
-          metalness={0.4}
+          metalness={0}
           roughness={0.7}
         />
         <OrbitControls

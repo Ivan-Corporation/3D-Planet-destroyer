@@ -11,15 +11,20 @@ import { keyframes} from "styled-components"
 import arrowup from './assets/img/arrowup.png'
 import arrowbottom from './assets/img/arrowbottom.png'
 import Loader from './Loader'
-
+import './assets/styles/camerabutton.css'
 
 
 // inject glide styles
 
+glide({
+  name: 'glide-top',
+  direction: 'top',
 
+});
 glide({
   name: 'glide-bottom',
-  direction: 'bottom'
+  direction: 'bottom',
+
 });
 
 
@@ -143,7 +148,22 @@ function App() {
 
   return (
     <>
-      <HideTopContainer>{!containerVisibility ? <button onClick={hideTopContainer}>Click</button> : <button onClick={showTopContainer}>Click</button>}</HideTopContainer>
+      <HideTopContainer>
+        {!containerVisibility ? 
+
+        <div onClick={hideTopContainer} class="button" id="button-7">
+        <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
+        <p>Look at planet</p>
+        </div>
+      
+      : 
+      
+      <div onClick={showTopContainer} class="button" id="button-7">
+      <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
+      <p>Back</p>
+      </div>
+      }
+      </HideTopContainer>
       {!containerVisibility ? <TopSectionContainer>
     
       <TopSection/>
@@ -161,7 +181,7 @@ function App() {
 
       <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Venus ♀</p>
       <ArrowBottom>
-      <Link to='/mars' transition='glide-bottom' >
+      <Link to='/venus' transition='glide-top' >
         <Rotate>
         <img src={arrowup} style={{width: '100px', }}/>
         </Rotate></Link></ArrowBottom>

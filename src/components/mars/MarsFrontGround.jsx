@@ -9,7 +9,7 @@ const TopSectionContainer = styled.div`
   top: 0;
   left: 0;
   
-  background-color: rgb(0, 0, 153, 0.05);
+  background-color: rgb(255, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
