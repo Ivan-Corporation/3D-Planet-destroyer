@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { keyframes} from "styled-components"
 
 const TopSectionContainer = styled.div`
   position: absolute;
@@ -12,47 +13,35 @@ const TopSectionContainer = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 99;
+ 
 `;
 
 const Logo = styled.h1`
   margin: 0;
   color: #fff;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 80px;
-  padding-top: 13%;
-
+  padding-top: 23%;
+  @media (max-width: 568px) {
+    padding-top: 53%;
+    font-size: 38px;
+  }
 `;
 
 const Slogan = styled.h4`
   margin: 0;
   color: #fff;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 22px;
   margin-top: 10px;
-`;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 16px;
 
-
-const DonateButton = styled.button`
-  outline: none;
-  border: none;
-  background-color: #d60606;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 8px;
-  padding: 8px 2em;
-  margin-top: 14em;
-  width: 250px;
-  height: 50px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 350ms ease-in-out;
-
-  &:hover {
-    background-color: transparent;
-    border: 2px solid #d60606;
   }
 `;
+
+
 
 const MadeBy = styled.h3`
   color: #fff;
@@ -61,20 +50,39 @@ const MadeBy = styled.h3`
   right: 10px;
   transform: translateX(-50%);
 `;
+// Create the keyframes
+const rotate = keyframes`
+  from {
+    transform: rotate(-5deg);
+  }
 
+  to {
+    transform: rotate(5deg);
+  }
+`;
+
+// Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate} 4s linear infinite alternate;
+
+  font-size: 1.2rem;
+`;
 export function TopSection() {
 
  
   return (
     <TopSectionContainer>
-      <Logo>Global Warming</Logo>
-      <Slogan>Keep it cool for safe living</Slogan>
+      <Logo>Earth</Logo>
+      <Slogan>D♁ (Earth size) - 1<br/>
+      Km from the sun - 149 599 951
+      </Slogan>
       
      
 
 
       <MadeBy>
-        <a target='_blank' rel="noreferrer" href='https://github.com/Ivan-Corporation/3D-Planet-destroyer' style={{textDecoration:'none', color:'white'}}><img style={{width:'50px', height:'50px'}} src='https://www.pnguniverse.com/wp-content/uploads/2020/10/GitHub-logo.png'/></a>
+      <Rotate><a target='_blank' rel="noreferrer" href='https://github.com/Ivan-Corporation/3D-Planet-destroyer' style={{textDecoration:'none', color:'white'}}><img style={{width:'50px', height:'50px'}} src='https://www.pnguniverse.com/wp-content/uploads/2020/10/GitHub-logo.png'/></a></Rotate>
       </MadeBy>
     </TopSectionContainer>
   );

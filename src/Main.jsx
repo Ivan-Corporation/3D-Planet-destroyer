@@ -22,24 +22,24 @@ export default function Main() {
 
 
   return (
-    <div style={{height:'100vh'}}>
+    <div style={{height:'101vh'}}>
       <BrowserRouter>
 
 
-<Navigation>
+      <Navigation>
       
+                <Route  
+                exact path="/"
+                screen >
+                  <Screen >
+                <App/>
+          </Screen>
+        </Route>
         <Route  
-        exact path="/earth"
-        screen >
-          <Screen >
-        <App/>
-  </Screen>
-</Route>
-<Route  
-        exact path="/mars"
-        screen 
-><AppMars/>
-</Route>
+                exact path="/mars"
+                screen 
+        ><AppMars/>
+        </Route>
       </Navigation>
       </BrowserRouter>
     </div>

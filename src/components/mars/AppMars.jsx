@@ -6,51 +6,58 @@ import { Mars } from "./Mars";
 import { TopSection } from "./MarsFrontGround";
 import { DestroyedMars} from "./DestroyedMars";
 import "react-tiger-transition/styles/main.min.css";
-import { Navigation, Route, Screen, Link, fade, room } from "react-tiger-transition";
+import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
 import { keyframes} from "styled-components"
 import arrowbottom from '../../assets/img/arrowbottom.png'
-
+import arrowup from '../../assets/img/arrowup.png'
+import Loader from '../../Loader'
 
 // inject glide styles
 
 
-room({
-  name: 'cube-left',
-  direction: 'left'
-});
-room({
-  name: 'cube-right',
-  direction: 'right'
+glide({
+  name: 'glide-top',
+  direction: 'top',
+
 });
 
 
 
 const CanvasContainer = styled.div`
-  width: 100%;
-  height: 100%;
+ 
+  height: 200vh;
 `;
+const CanvasContainerSmall = styled.div`
+ 
+  height: 100vh;
+`;
+
+
 const TopSectionContainer = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 200vh;
   top: 0;
   left: 0;
-  background-color: #1756dd32;
+  background-color: rgb(255, 153, 51, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 99;
 `;
-const DonateButton = styled.button`
+
+const DestroyButton = styled.button`
+position: absolute;
+
   outline: none;
   border: none;
-  background-color: #d60606;
+  background-color:  #cc0000;
   color: #fff;
   font-size: 16px;
   font-weight: 700;
   border-radius: 8px;
-  padding: 8px 2em;
-  margin-top: 43em;
+  top: 65%;
+  left: 44,5%;
   width: 250px;
   height: 50px;
   cursor: pointer;
@@ -64,38 +71,57 @@ const DonateButton = styled.button`
   }
 `;
 
-
-const ArrowUp = styled.div`
-  font-size: 26px;
+const ArrowBottom = styled.div`
+  position: absolute;
   font-weight: 700;
   cursor: pointer;
+  bottom:0px;
+  position:absolute;
+  width: 5,2%;
   transition: all 350ms ease-in-out;
   z-index: 199;
   &:hover {
     background-color: transparent;
   }
 `;
+const ArrowUp = styled.div`
+  position: absolute;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 350ms ease-in-out;
+  z-index: 199;
+  margin-top: 1em;
 
-
+  &:hover {
+    background-color: transparent;
+  }
+`;
 // Create the keyframes
 const rotate = keyframes`
   from {
-    transform: rotate(-10deg);
+    transform: rotate(-2deg);
   }
 
   to {
-    transform: rotate(10deg);
+    transform: rotate(2deg);
   }
 `;
+
 
 // Here we create a component that will rotate everything we pass in over two seconds
 const Rotate = styled.div`
   display: inline-block;
-  animation: ${rotate} 2s linear infinite;
+  animation: ${rotate} 5s linear infinite alternate;
 
   font-size: 1.2rem;
 `;
-
+const HideTopContainer = styled.h3`
+  color: #fff;
+  position: fixed;
+  top: 5px;
+  left: 20px;
+  z-index: 300;
+`;
 
 
 function AppMars() {
@@ -107,28 +133,61 @@ function AppMars() {
   };
 
 
+  const [containerVisibility, sethideTopContainer] = useState(false)
+
+  const hideTopContainer = () => {
+    sethideTopContainer(true);
+  };
 
   return (
-    <CanvasContainer>
-      <TopSectionContainer>
+    <>
+      {!containerVisibility ? <TopSectionContainer>
       <TopSection />
-      <ArrowUp><Link to='/earth' transition='cube-right' style={{textDecoration:'none', textAlign:'center'}}><Rotate>
-        <img src={arrowbottom} style={{width: '110px', }}/>
-        </Rotate><br/><p style={{textAlign:'center', marginTop: '-30px', color: 'whitesmoke'}}>Jupiter</p></Link></ArrowUp>
 
-      <DonateButton onClick={handleDestroy}>Destroy</DonateButton>
-      </TopSectionContainer>
+      <HideTopContainer><button onClick={hideTopContainer}>Click</button></HideTopContainer>
+
+      
+      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Jupiter</p>
+      <ArrowUp>
+      <Link to='/mars' transition='glide-bottom' >
+        <Rotate>
+        <img src={arrowbottom} style={{width: '100px' }}/>
+        </Rotate></Link></ArrowUp>
+
+      <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton>
+
+      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Earth</p>
+      <ArrowBottom>
+      <Link to='/' transition='glide-bottom' >
+        <Rotate>
+        <img src={arrowup} style={{width: '100px', }}/>
+        </Rotate></Link></ArrowBottom>
+
+  
+      </TopSectionContainer> : ''}
+      {!containerVisibility ? <CanvasContainer>
       <Canvas>
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
           {!destroy ? <Mars /> : <DestroyedMars/>}
           
 
           
         </Suspense>
       </Canvas>
-    </CanvasContainer>
+    </CanvasContainer> : 
+    <CanvasContainerSmall>
+    <Canvas>
+      <Suspense fallback={<Loader />}>
+        {!destroy ? <Mars /> : <DestroyedMars/>}
+        
 
+        
+      </Suspense>
+    </Canvas>
+  </CanvasContainerSmall>
+    }
 
+    </>  
   );
 }
 

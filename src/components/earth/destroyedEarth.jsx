@@ -7,23 +7,21 @@ import EarthDayMap from "../../assets/textures/8k_earth_daymap.jpg";
 import EarthNormalMap from "../../assets/textures/8k_earth_normal_map.jpg";
 import EarthSpecularMap from "../../assets/textures/8k_earth_specular_map.jpg";
 import EarthCloudsMap from "../../assets/textures/8k_earth_clouds.jpg";
-import LavaMap from "../../assets/textures/magma2.jpg";
+import LavaMap from "../../assets/textures/lava.jpg";
 import { TextureLoader } from "three";
 
 export function DestroyedEarth(props) {
-  const [EarthLavaMap, normalMap, specularMap, cloudsMap] = useLoader(
+  const [EarthLavaMap] = useLoader(
     TextureLoader,
-    [LavaMap, EarthNormalMap, EarthSpecularMap]
+    [LavaMap]
   );
 
   const earthRef = useRef();
-  const cloudsRef = useRef();
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
 
-    earthRef.current.rotation.y = elapsedTime / 6;
-    cloudsRef.current.rotation.y = elapsedTime / 6;
+    earthRef.current.rotation.y = elapsedTime / 10;
   });
 
   return (
@@ -38,22 +36,12 @@ export function DestroyedEarth(props) {
         saturation={0}
         fade={true}
       />
-      <mesh ref={cloudsRef} position={[0, 0, 3]}>
-        <sphereGeometry args={[1.005, 32, 32]} />
-        <meshPhongMaterial
-          map={cloudsMap}
-          opacity={0.4}
-          depthWrite={true}
-          transparent={true}
-          side={THREE.DoubleSide}
-        />
-      </mesh>
-      <mesh ref={earthRef} position={[0, 0, 3]}>
+      
+      <mesh ref={earthRef} position={[0, 0, 0]} scale='1'>
         <sphereGeometry args={[1, 32, 32]} />
-        <meshPhongMaterial specularMap={specularMap} />
+        <meshPhongMaterial />
         <meshStandardMaterial
           map={EarthLavaMap}
-          normalMap={normalMap}
           metalness={0.4}
           roughness={0.7}
         />

@@ -38,7 +38,7 @@ export function Earth(props) {
         saturation={0}
         fade={true}
       />
-      <mesh ref={cloudsRef} position={[0, 0, 3]}>
+      <mesh ref={cloudsRef} position={[0, 0, 0]} scale='1'>
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshPhongMaterial
           map={cloudsMap}
@@ -48,7 +48,7 @@ export function Earth(props) {
           side={THREE.DoubleSide}
         />
       </mesh>
-      <mesh ref={earthRef} position={[0, 0, 3]}>
+      <mesh ref={earthRef} position={[0, 0, 0]} scale='1'>
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
@@ -57,14 +57,14 @@ export function Earth(props) {
           metalness={0.4}
           roughness={0.7}
         />
-        {/* <OrbitControls
+        <OrbitControls
           enableZoom={true}
           enablePan={true}
           enableRotate={true}
           zoomSpeed={0.6}
           panSpeed={0.5}
           rotateSpeed={0.4}
-        /> */}
+        />
       </mesh>
     </>
   );

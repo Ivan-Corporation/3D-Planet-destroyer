@@ -3,15 +3,14 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 
-import EarthDayMap from "../../assets/textures/8k_earth_daymap.jpg";
-import EarthNormalMap from "../../assets/textures/8k_earth_normal_map.jpg";
-import EarthSpecularMap from "../../assets/textures/8k_earth_specular_map.jpg";
+import MarsMap from "../../assets/textures/planets/8k_mars.jpg";
+
 import { TextureLoader } from "three";
 
 export function Mars(props) {
-  const [colorMap, normalMap, specularMap] = useLoader(
+  const [colorMap] = useLoader(
     TextureLoader,
-    [EarthDayMap, EarthNormalMap, EarthSpecularMap]
+    [MarsMap]
   );
 
   const earthRef = useRef();
@@ -35,16 +34,21 @@ export function Mars(props) {
         fade={true}
       />
 
-      <mesh ref={earthRef} position={[0, 0, 3]}>
+      <mesh ref={earthRef} position={[0, 0, 0]} scale='0.7'>
         <sphereGeometry args={[1, 32, 32]} />
-        <meshPhongMaterial specularMap={specularMap} />
+        <meshPhongMaterial  />
         <meshStandardMaterial
           map={colorMap}
-          normalMap={normalMap}
           metalness={0.4}
           roughness={0.7}
         />
-
+        <OrbitControls
+          enableZoom={true}
+          enablePan={false}
+          enableRotate={true}
+          zoomSpeed={0.6}
+          rotateSpeed={0.4}
+        />
       </mesh>
     </>
   );
