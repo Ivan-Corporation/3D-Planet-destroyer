@@ -46,11 +46,14 @@ export function DestroyedMars(props) {
         />
         <OrbitControls
           enableZoom={true}
-          enablePan={true}
+          enablePan={false}
           enableRotate={true}
           zoomSpeed={0.6}
           panSpeed={0.5}
           rotateSpeed={0.4}
+          minDistance = {1.5}
+				  maxDistance = {5}
+				  
         />
       </mesh>
     </>

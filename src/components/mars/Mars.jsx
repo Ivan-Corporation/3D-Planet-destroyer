@@ -48,6 +48,8 @@ export function Mars(props) {
           enableRotate={true}
           zoomSpeed={0.6}
           rotateSpeed={0.4}
+          minDistance = {1.5}
+				  maxDistance = {5}
         />
       </mesh>
     </>

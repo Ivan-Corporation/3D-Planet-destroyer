@@ -150,7 +150,7 @@ function App() {
 
 
 
-      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Mars</p>
+      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Mars ♂</p>
       <ArrowUp>
       <Link to='/mars' transition='glide-bottom' >
         <Rotate>
@@ -159,7 +159,7 @@ function App() {
 
       <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton>
 
-      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Venus</p>
+      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Venus ♀</p>
       <ArrowBottom>
       <Link to='/mars' transition='glide-bottom' >
         <Rotate>

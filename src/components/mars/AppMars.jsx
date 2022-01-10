@@ -138,16 +138,19 @@ function AppMars() {
   const hideTopContainer = () => {
     sethideTopContainer(true);
   };
+  const showTopContainer = () => {
+    sethideTopContainer(false);
+  };
 
   return (
     <>
+      <HideTopContainer>{!containerVisibility ? <button onClick={hideTopContainer}>Click</button> : <button onClick={showTopContainer}>Click</button>}</HideTopContainer>
       {!containerVisibility ? <TopSectionContainer>
       <TopSection />
 
-      <HideTopContainer><button onClick={hideTopContainer}>Click</button></HideTopContainer>
 
-      
-      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Jupiter</p>
+
+      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Jupiter ♃</p>
       <ArrowUp>
       <Link to='/mars' transition='glide-bottom' >
         <Rotate>
@@ -156,7 +159,7 @@ function AppMars() {
 
       <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton>
 
-      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Earth</p>
+      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Earth ♁</p>
       <ArrowBottom>
       <Link to='/' transition='glide-bottom' >
         <Rotate>

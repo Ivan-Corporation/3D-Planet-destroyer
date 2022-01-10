@@ -45,14 +45,16 @@ export function DestroyedEarth(props) {
           metalness={0.4}
           roughness={0.7}
         />
-        {/* <OrbitControls
+        <OrbitControls
           enableZoom={true}
           enablePan={true}
           enableRotate={true}
           zoomSpeed={0.6}
           panSpeed={0.5}
           rotateSpeed={0.4}
-        /> */}
+          minDistance = {1.5}
+				  maxDistance = {5}
+        />
       </mesh>
     </>
   );
