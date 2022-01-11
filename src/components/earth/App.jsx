@@ -2,16 +2,16 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Earth } from "./components/earth/Earth";
-import { TopSection } from "./components/topSection/FrontGround";
-import DestroyedEarth from "./components/earth/DestroyedEarth";
+import { Earth } from "./Earth";
+import { TopSection } from "./FrontGround";
+import { DestroyedEarth } from "./DestroyedEarth";
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, fade, glide } from "react-tiger-transition";
 import { keyframes} from "styled-components"
-import arrowup from './assets/img/arrowup.png'
-import arrowbottom from './assets/img/arrowbottom.png'
-import Loader from './Loader'
-import './assets/styles/camerabutton.css'
+import arrowup from '../../assets/img/arrowup.png'
+import arrowbottom from '../../assets/img/arrowbottom.png'
+import Loader from '../../Loader'
+import '../../assets/styles/camerabutton.css'
 
 
 // inject glide styles

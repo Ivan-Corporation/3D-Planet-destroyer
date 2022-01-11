@@ -11,7 +11,7 @@ import { BrowserRouter,  Switch } from "react-router-dom";
 
 
 import './index.css'
-import App from './App';
+import App from './components/earth/App';
 import AppMars from './components/mars/AppMars';
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, fade, room } from "react-tiger-transition";
