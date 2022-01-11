@@ -184,9 +184,9 @@ function AppNeptune() {
 
       {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
 
-      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Saturn ♄</p>
+      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Uranus ♅</p>
       <ArrowBottom>
-      <Link to='/saturn' transition='glide-top' >
+      <Link to='/uranus' transition='glide-top' >
         <Rotate>
         <img src={arrowup} style={{width: '100px' }}/>
         </Rotate></Link></ArrowBottom>

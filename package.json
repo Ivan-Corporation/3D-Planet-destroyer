@@ -13,6 +13,7 @@
     "react-loadingg": "^1.7.2",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
+    "react-screen-orientation": "0.0.4",
     "react-scripts": "4.0.3",
     "react-tiger-transition": "^4.1.2",
     "react-transition-group": "^4.4.2",

@@ -28,7 +28,9 @@ export default function Main() {
 
 
   return (
-    <div style={{height:'101vh'}}>
+    <div style={{
+      height:'101vh'
+      }}>
       <BrowserRouter>
 
 

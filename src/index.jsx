@@ -4,6 +4,7 @@ import "./index.css";
 import Main from "./Main";
 import { Router, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import DeviceOrientation from 'react-screen-orientation'
 
 
 const rootElement = document.getElementById("root");
@@ -15,7 +16,7 @@ ReactDOM.render(
     <Route
       component={({ history }) => {
         window.appHistory = history;
-        return <Main />;
+        return <DeviceOrientation lockOrientation={'landscape'}><Main /></DeviceOrientation>;
       }}
     />
   </Router>,
