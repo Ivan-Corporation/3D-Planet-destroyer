@@ -18,6 +18,9 @@ import { Navigation, Route, Screen, Link, fade, room } from "react-tiger-transit
 import AppVenus from './components/venus/AppVenus';
 import AppMercury from './components/mercury/AppMercury';
 import AppJupiter from './components/jupiter/AppJupiter';
+import AppSaturn from './components/saturn/AppSaturn';
+import AppUranus from './components/uranus/AppUranus';
+import AppNeptune from './components/neptune/AppNeptune';
 
 
 
@@ -57,6 +60,26 @@ export default function Main() {
                 exact path="/jupiter"
                 screen 
         ><AppJupiter/>
+        </Route>
+        <Route  
+                exact path="/saturn"
+                screen 
+        ><AppSaturn/>
+        </Route>
+        <Route  
+                exact path="/uranus"
+                screen 
+        ><AppUranus/>
+        </Route>
+        <Route  
+                exact path="/neptune"
+                screen 
+        ><AppNeptune/>
+        </Route>
+        <Route  
+                exact path="/pluton"
+                screen 
+        ><AppNeptune/>
         </Route>
       </Navigation>
       </BrowserRouter>

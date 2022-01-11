@@ -187,7 +187,7 @@ function AppMercury() {
         <img src={arrowup} style={{width: '100px', }}/>
         </Rotate></Link></ArrowBottom>
 
-      <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton>
+        {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
 
       
 

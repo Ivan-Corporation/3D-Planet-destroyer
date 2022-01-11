@@ -2,19 +2,19 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Earth } from "./components/earth/Earth";
-import { TopSection } from "./components/topSection/FrontGround";
-import { DestroyedEarth } from "./components/earth/DestroyedEarth";
+import { TopSection } from "./SaturnFrontGround";
 import "react-tiger-transition/styles/main.min.css";
-import { Navigation, Route, Screen, Link, fade, glide } from "react-tiger-transition";
-import { keyframes} from "styled-components"
-import arrowup from './assets/img/arrowup.png'
-import arrowbottom from './assets/img/arrowbottom.png'
-import Loader from './Loader'
-import './assets/styles/camerabutton.css'
-
+import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
+import { keyframes } from "styled-components"
+import arrowbottom from '../../assets/img/arrowbottom.png'
+import arrowup from '../../assets/img/arrowup.png'
+import Loader from '../../Loader'
+import '../../assets/styles/camerabutton.css'
+import { Saturn } from './Saturn';
+import { DestroyedSaturn } from './DestroyedSaturn';
 
 // inject glide styles
+
 
 glide({
   name: 'glide-top',
@@ -38,13 +38,14 @@ const CanvasContainerSmall = styled.div`
   height: 100vh;
 `;
 
+
 const TopSectionContainer = styled.div`
   position: absolute;
   width: 100%;
   height: 200vh;
   top: 0;
   left: 0;
-  background-color: rgb(0, 0, 153, 0.05);
+  background-color: rgb(255, 153, 51, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +57,7 @@ position: absolute;
 
   outline: none;
   border: none;
-  background-color: #d60606;
+  background-color:  #cc0000;
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -112,12 +113,13 @@ const rotate = keyframes`
   }
 `;
 
+
 // Here we create a component that will rotate everything we pass in over two seconds
 const Rotate = styled.div`
   display: inline-block;
   animation: ${rotate} 5s linear infinite alternate;
 
- 
+  font-size: 1.2rem;
 `;
 const HideTopContainer = styled.h3`
   color: #fff;
@@ -128,13 +130,14 @@ const HideTopContainer = styled.h3`
 `;
 
 
-function App() {
+function AppSaturn() {
 
   const [destroy, setDestroy] = useState(false)
 
   const handleDestroy = () => {
     setDestroy(true);
   };
+
 
   const [containerVisibility, sethideTopContainer] = useState(false)
 
@@ -145,10 +148,9 @@ function App() {
     sethideTopContainer(false);
   };
 
-
   return (
     <>
-      <HideTopContainer>
+     <HideTopContainer>
         {!containerVisibility ? 
 
         <div onClick={hideTopContainer} class="button" id="button-7">
@@ -164,34 +166,36 @@ function App() {
       </div>
       }
       </HideTopContainer>
+ 
+ 
+ 
       {!containerVisibility ? <TopSectionContainer>
-    
-      <TopSection/>
+      <TopSection />
 
 
 
-      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Mars ♂</p>
+      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Uranus ♅</p>
       <ArrowUp>
-      <Link to='/mars' transition='glide-bottom' >
+      <Link to='/uranus' transition='glide-bottom' >
         <Rotate>
         <img src={arrowbottom} style={{width: '100px' }}/>
         </Rotate></Link></ArrowUp>
 
         {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
 
-      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Venus ♀</p>
+      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Jupiter ♃</p>
       <ArrowBottom>
-      <Link to='/venus' transition='glide-top' >
+      <Link to='/jupiter' transition='glide-top' >
         <Rotate>
         <img src={arrowup} style={{width: '100px', }}/>
         </Rotate></Link></ArrowBottom>
+
+  
       </TopSectionContainer> : ''}
-      
       {!containerVisibility ? <CanvasContainer>
       <Canvas>
         <Suspense fallback={<Loader />}>
-        
-          {!destroy ? <Earth /> : <DestroyedEarth/>}
+          {!destroy ? <Saturn /> : <DestroyedSaturn/>}
           
 
           
@@ -201,7 +205,7 @@ function App() {
     <CanvasContainerSmall>
     <Canvas>
       <Suspense fallback={<Loader />}>
-        {!destroy ? <Earth /> : <DestroyedEarth/>}
+        {!destroy ? <Saturn /> : <DestroyedSaturn/>}
         
 
         
@@ -210,8 +214,8 @@ function App() {
   </CanvasContainerSmall>
     }
 
-</>
+    </>  
   );
 }
 
-export default App;
+export default AppSaturn;

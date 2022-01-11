@@ -49,7 +49,7 @@ export function DestroyedJupiter(props) {
           zoomSpeed={0.6}
           panSpeed={0.5}
           rotateSpeed={0.4}
-          minDistance = {1.5}
+          minDistance = {4}
 				  maxDistance = {5}
 				  
         />

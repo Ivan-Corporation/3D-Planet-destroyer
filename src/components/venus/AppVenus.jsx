@@ -181,7 +181,7 @@ function AppVenus() {
         <img src={arrowbottom} style={{width: '100px' }}/>
         </Rotate></Link></ArrowUp>
 
-      <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton>
+        {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
 
       <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Mercury ☿</p>
       <ArrowBottom>

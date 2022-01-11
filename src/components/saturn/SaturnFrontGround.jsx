@@ -8,8 +8,7 @@ const TopSectionContainer = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  
-  background-color: rgb(255, 255, 102, 0.07);
+  background-color: rgb(102, 153, 153, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,9 +80,9 @@ export function TopSection() {
  
   return (
     <TopSectionContainer>
-      <Logo>Jupiter</Logo>
-      <Slogan>D♁ (Earth size) - 10,97<br/><u>scale 1 to 4</u><br/>
-      Km from the sun - 778 330 257
+      <Logo>Saturn</Logo>
+      <Slogan>D♁ (Earth size) - 9,14<br/><u>scale 1 to 4</u><br/>
+      Km from the sun - 1 429 400 028
       </Slogan>
       
      

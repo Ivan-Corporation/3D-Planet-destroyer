@@ -176,12 +176,12 @@ function AppMars() {
 
       <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Jupiter ♃</p>
       <ArrowUp>
-      <Link to='/mars' transition='glide-top' >
+      <Link to='/jupiter' transition='glide-bottom' >
         <Rotate>
         <img src={arrowbottom} style={{width: '100px' }}/>
         </Rotate></Link></ArrowUp>
 
-      <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton>
+        {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
 
       <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Earth ♁</p>
       <ArrowBottom>

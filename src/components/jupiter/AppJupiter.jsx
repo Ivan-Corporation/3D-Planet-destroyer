@@ -137,6 +137,7 @@ function AppJupiter() {
   const handleDestroy = () => {
     setDestroy(true);
   };
+  
 
 
   const [containerVisibility, sethideTopContainer] = useState(false)
@@ -176,18 +177,18 @@ function AppJupiter() {
 
       <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Saturn ♄</p>
       <ArrowUp>
-      <Link to='/saturn' transition='glide-top' >
+      <Link to='/saturn' transition='glide-bottom' >
         <Rotate>
         <img src={arrowbottom} style={{width: '100px' }}/>
         </Rotate></Link></ArrowUp>
 
-      <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton>
+      {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
 
       <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Mars ♂</p>
       <ArrowBottom>
       <Link to='/mars' transition='glide-top' >
         <Rotate>
-        <img src={arrowup} style={{width: '100px', }}/>
+        <img src={arrowup} style={{width: '100px' }}/>
         </Rotate></Link></ArrowBottom>
 
   

@@ -3,14 +3,14 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 
-import MarsMap from "../../assets/textures/planets/8k_jupiter.jpg";
+import NeptuneMap from "../../assets/textures/planets/2k_neptune.jpg";
 
 import { TextureLoader } from "three";
 
-export function Jupiter(props) {
+export function Neptune(props) {
   const [colorMap] = useLoader(
     TextureLoader,
-    [MarsMap]
+    [NeptuneMap]
   );
 
   const earthRef = useRef();
@@ -24,7 +24,7 @@ export function Jupiter(props) {
   return (
     <>
       {/* <ambientLight intensity={1} /> */}
-      <pointLight color="#f6f3ea" position={[4, 0, 5]} intensity={0.9} />
+      <pointLight color="#f6f3ea" position={[4, 0, 5]} intensity={0.2} />
       <Stars
         radius={300}
         depth={60}
@@ -34,7 +34,7 @@ export function Jupiter(props) {
         fade={true}
       />
 
-      <mesh ref={earthRef} position={[0, 0, 0]} scale='2.6'>
+      <mesh ref={earthRef} position={[0, 0, 0]} scale='2'>
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial  />
         <meshStandardMaterial
@@ -48,7 +48,7 @@ export function Jupiter(props) {
           enableRotate={true}
           zoomSpeed={0.6}
           rotateSpeed={0.4}
-          minDistance = {4}
+          minDistance = {3}
 				  maxDistance = {5}
         />
       </mesh>
