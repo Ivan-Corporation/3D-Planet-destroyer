@@ -21,6 +21,7 @@ import AppJupiter from './components/jupiter/AppJupiter';
 import AppSaturn from './components/saturn/AppSaturn';
 import AppUranus from './components/uranus/AppUranus';
 import AppNeptune from './components/neptune/AppNeptune';
+import AppPluton from './components/pluton/AppPluton';
 
 
 
@@ -81,7 +82,7 @@ export default function Main() {
         <Route  
                 exact path="/pluton"
                 screen 
-        ><AppNeptune/>
+        ><AppPluton/>
         </Route>
       </Navigation>
       </BrowserRouter>

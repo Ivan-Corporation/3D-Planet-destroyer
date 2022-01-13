@@ -9,7 +9,7 @@ const TopSectionContainer = styled.div`
   top: 0;
   left: 0;
   
-  background-color: rgb(0, 0, 153, 0.07);
+  background-color: rgb(138, 138, 138, 0.07);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,8 +82,8 @@ export function TopSection() {
   return (
     <TopSectionContainer>
       <Logo>Pluton</Logo>
-      <Slogan>D♁ (Earth size) - 3,865<br/><u>scale 1 to 2</u><br/>
-      Km from the sun - 4 504 299 579
+      <Slogan>D♁ (Earth size) - 0,181<br/><u>scale 1 to 2</u><br/>
+      Km from the sun - 5,906,376,272
       </Slogan>
       
      

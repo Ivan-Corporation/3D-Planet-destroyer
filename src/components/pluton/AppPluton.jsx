@@ -130,7 +130,7 @@ const HideTopContainer = styled.h3`
 `;
 
 
-function AppNeptune() {
+function AppPluton() {
 
   const [destroy, setDestroy] = useState(false)
 
@@ -214,4 +214,4 @@ function AppNeptune() {
   );
 }
 
-export default AppNeptune;
+export default AppPluton;
