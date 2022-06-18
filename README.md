@@ -1,6 +1,9 @@
 # 3D Planets destroyer
 ## Demo - https://planet-destroyer.netlify.app/
 
+
+## RU [Видео на ютубе на основе проекта](https://www.youtube.com/watch?v=H_OdNo4dxTE)
+
 <img src='1.png'>
 <img src='2.png'>
 <img src='3.png'>
