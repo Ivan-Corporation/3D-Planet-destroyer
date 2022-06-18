@@ -2,7 +2,9 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { TopSection } from "./MercuryFrontGround";
+import { Sun } from "./Sun";
+import { TopSection } from "./SunFrontGround";
+import { DestroyedSun } from "./DestroyedSun";
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
 import { keyframes} from "styled-components"
@@ -10,8 +12,6 @@ import arrowbottom from '../../assets/img/arrowbottom.png'
 import arrowup from '../../assets/img/arrowup.png'
 import Loader from '../../Loader'
 import '../../assets/styles/camerabutton.css'
-import { Mercury } from './Mercury';
-import { DestroyedMercury } from './DestroyedMercury';
 
 // inject glide styles
 
@@ -130,13 +130,14 @@ const HideTopContainer = styled.h3`
 `;
 
 
-function AppMercury() {
+function AppSun() {
 
   const [destroy, setDestroy] = useState(false)
 
   const handleDestroy = () => {
     setDestroy(true);
   };
+  
 
 
   const [containerVisibility, sethideTopContainer] = useState(false)
@@ -174,29 +175,23 @@ function AppMercury() {
 
 
 
-      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Jupiter ♃</p>
+      
+
+      {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
+
+      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', paddingTop: '70px'}}>Mercury ☿</p>
       <ArrowUp>
-      <Link to='/venus' transition='glide-bottom' >
+      <Link to='/mercury' transition='glide-bottom' >
         <Rotate>
         <img src={arrowbottom} style={{width: '100px' }}/>
         </Rotate></Link></ArrowUp>
-        <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Sun ☼</p>
-      <ArrowBottom>
-      <Link to='/sun' transition='glide-top' >
-        <Rotate>
-        <img src={arrowup} style={{width: '100px', }}/>
-        </Rotate></Link></ArrowBottom>
-
-        {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
-
-      
 
   
       </TopSectionContainer> : ''}
       {!containerVisibility ? <CanvasContainer>
       <Canvas>
         <Suspense fallback={<Loader />}>
-          {!destroy ? <Mercury /> : <DestroyedMercury/>}
+          {!destroy ? <Sun /> : <DestroyedSun/>}
           
 
           
@@ -206,7 +201,8 @@ function AppMercury() {
     <CanvasContainerSmall>
     <Canvas>
       <Suspense fallback={<Loader />}>
-        {!destroy ? <Mercury /> : <DestroyedMercury/>}        
+        {!destroy ? <Sun /> : <DestroyedSun/>}
+        
 
         
       </Suspense>
@@ -218,4 +214,4 @@ function AppMercury() {
   );
 }
 
-export default AppMercury;
+export default AppSun;

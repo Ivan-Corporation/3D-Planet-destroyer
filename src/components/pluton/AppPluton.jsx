@@ -181,7 +181,7 @@ function AppPluton() {
 
       <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Neptune ♆</p>
       <ArrowBottom>
-      <Link to='/saturn' transition='glide-top' >
+      <Link to='/neptune' transition='glide-top' >
         <Rotate>
         <img src={arrowup} style={{width: '100px' }}/>
         </Rotate></Link></ArrowBottom>
