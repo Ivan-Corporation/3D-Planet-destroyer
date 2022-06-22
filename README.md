@@ -2,7 +2,7 @@
 ## Demo - https://planet-destroyer.netlify.app/
 
 
-## RU [Видео на ютубе на основе проекта](https://www.youtube.com/watch?v=H_OdNo4dxTE)
+## RU [Видео на ютубе на основе проекта](https://www.youtube.com/watch?v=v73BxVUzjYQ)
 
 <img src='1.png'>
 <img src='2.png'>
