@@ -4,14 +4,11 @@
 <br/>
 <div align='center'><img  src='./public/logo512.png' width='250px'/></div>
 
-<<<<<<< HEAD
+
 <br/>
 <br/>
 <br/>
 <br/>
-=======
-## RU [Видео на ютубе на основе проекта](https://www.youtube.com/watch?v=v73BxVUzjYQ)
->>>>>>> d5671e7b4751398ef17093a5fb977eddfacd142c
 
 <hr/>
 <h2 align='center'>Videos about 3D in this site</h2>
