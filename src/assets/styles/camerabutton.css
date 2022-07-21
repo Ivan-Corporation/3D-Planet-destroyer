@@ -16,6 +16,15 @@
     justify-content: center;
     overflow: hidden;
   }
+
+  @media (max-width:600px) {
+    .button {
+        width: 60px;
+        font-size: .5em;
+        padding-left: 20%;
+    }
+  }
+
 #button-7 {
     position: relative;
     overflow: hidden;

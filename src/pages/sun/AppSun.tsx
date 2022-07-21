@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Sun } from "./Sun";
-import { TopSection } from "./SunFrontGround";
+import { FrontGround } from "../../components/FrontGround";
 import { DestroyedSun } from "./DestroyedSun";
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
@@ -154,14 +154,14 @@ function AppSun() {
      <HideTopContainer>
         {!containerVisibility ? 
 
-        <div onClick={hideTopContainer} class="button" id="button-7">
+        <div onClick={hideTopContainer} className="button" id="button-7">
         <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
         <p>Look at planet</p>
         </div>
       
       : 
       
-      <div onClick={showTopContainer} class="button" id="button-7">
+      <div onClick={showTopContainer} className="button" id="button-7">
       <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
       <p>Back</p>
       </div>
@@ -171,7 +171,7 @@ function AppSun() {
  
  
       {!containerVisibility ? <TopSectionContainer>
-      <TopSection />
+        <FrontGround planet_name={"Sun"} planet_info={"♁ - 109 times the diameter of Earth \n scale 1 to 109 \n Km from the sun - 0"}/>
 
 
 

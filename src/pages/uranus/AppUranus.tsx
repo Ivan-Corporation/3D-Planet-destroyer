@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Uranus } from "./Uranus";
-import { TopSection } from "./UranusFrontGround";
+import { FrontGround } from "../../components/FrontGround";
 import { DestroyedUranus} from "./DestroyedUranus";
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
@@ -154,14 +154,14 @@ function AppUranus() {
      <HideTopContainer>
         {!containerVisibility ? 
 
-        <div onClick={hideTopContainer} class="button" id="button-7">
+        <div onClick={hideTopContainer} className="button" id="button-7">
         <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
         <p>Look at planet</p>
         </div>
       
       : 
       
-      <div onClick={showTopContainer} class="button" id="button-7">
+      <div onClick={showTopContainer} className="button" id="button-7">
       <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
       <p>Back</p>
       </div>
@@ -171,8 +171,7 @@ function AppUranus() {
  
  
       {!containerVisibility ? <TopSectionContainer>
-      <TopSection />
-
+        <FrontGround planet_name={"Uranus"} planet_info={"D♁ (Earth size) - 3,9 \n scale 1 to 2 \n Km from the sun - 2 870 989 228"}/>
 
 
       <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Neptune ♆</p>

@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Pluton } from "./Pluton";
-import { TopSection } from "./PlutonFrontGround";
-import { DestroyedPluton } from "./DestroyedPluton";
+import { Neptune } from "./Neptune";
+import { FrontGround } from "../../components/FrontGround";
+import { DestroyedNeptune } from "./DestroyedNeptune";
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
 import { keyframes} from "styled-components"
@@ -130,7 +130,7 @@ const HideTopContainer = styled.h3`
 `;
 
 
-function AppPluton() {
+function AppNeptune() {
 
   const [destroy, setDestroy] = useState(false)
 
@@ -154,14 +154,14 @@ function AppPluton() {
      <HideTopContainer>
         {!containerVisibility ? 
 
-        <div onClick={hideTopContainer} class="button" id="button-7">
+        <div onClick={hideTopContainer} className="button" id="button-7">
         <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
         <p>Look at planet</p>
         </div>
       
       : 
       
-      <div onClick={showTopContainer} class="button" id="button-7">
+      <div onClick={showTopContainer} className="button" id="button-7">
       <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
       <p>Back</p>
       </div>
@@ -171,17 +171,22 @@ function AppPluton() {
  
  
       {!containerVisibility ? <TopSectionContainer>
-      <TopSection />
+      <FrontGround planet_name={"Neptune"} planet_info={"D♁ (Earth size) - 3,865 \n scale 1 to 2 \n Km from the sun - 4 504 299 579"}/>
 
 
 
-      
+      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Pluton ♇</p>
+      <ArrowUp>
+      <Link to='/pluton' transition='glide-bottom' >
+        <Rotate>
+        <img src={arrowbottom} style={{width: '100px' }}/>
+        </Rotate></Link></ArrowUp>
 
       {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
 
-      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Neptune ♆</p>
+      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Uranus ♅</p>
       <ArrowBottom>
-      <Link to='/neptune' transition='glide-top' >
+      <Link to='/uranus' transition='glide-top' >
         <Rotate>
         <img src={arrowup} style={{width: '100px' }}/>
         </Rotate></Link></ArrowBottom>
@@ -191,7 +196,7 @@ function AppPluton() {
       {!containerVisibility ? <CanvasContainer>
       <Canvas>
         <Suspense fallback={<Loader />}>
-          {!destroy ? <Pluton /> : <DestroyedPluton/>}
+          {!destroy ? <Neptune /> : <DestroyedNeptune/>}
           
 
           
@@ -201,7 +206,7 @@ function AppPluton() {
     <CanvasContainerSmall>
     <Canvas>
       <Suspense fallback={<Loader />}>
-        {!destroy ? <Pluton /> : <DestroyedPluton/>}
+        {!destroy ? <Neptune /> : <DestroyedNeptune/>}
         
 
         
@@ -214,4 +219,4 @@ function AppPluton() {
   );
 }
 
-export default AppPluton;
+export default AppNeptune;

@@ -23,7 +23,7 @@ export function Earth(props) {
     const elapsedTime = clock.getElapsedTime();
 
     earthRef.current.rotation.y = elapsedTime / 6;
-    cloudsRef.current.rotation.y = elapsedTime / 6;
+    cloudsRef.current.rotation.y = elapsedTime / 4;
   });
 
   return (

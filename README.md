@@ -6,18 +6,16 @@
 
 
 <br/>
-<br/>
-<br/>
-<br/>
+
 
 <hr/>
-<h2 align='center'>Videos about 3D in this site</h2>
+<h2 align='center'>Videos about 3D in this website:</h2>
 <br/>
 
 ## EN 🌝 [YouTube video - "I created sun"](https://www.youtube.com/watch?v=DbWTAG9pBoU)
 
 ## RU 🌚 [Видео на YouTube - Создаём Плутон](https://www.youtube.com/watch?v=H_OdNo4dxTE)
-<br/>
+
 
 <br/>
 <h1 align='center'>Examples</h1>
@@ -33,18 +31,20 @@
 ## Todo
 
 <ul>
-<li> Solar system planets with textures three.js ✔
-<li> transition router with animation ✔
-<li> Background filter in every image ✔
-<li> onClick top section hide? ✔
-<li> Pluto ✔
-<li> Sun ✔
+<li><strike> Solar system planets with textures three.js ✔</strike>
+<li><strike> transition router with animation ✔</strike>
+<li><strike> Background filter in every image ✔</strike>
+<li><strike> onClick top section hide? ✔</strike>
+<li><strike> Pluto ✔</strike>
+<li><strike> Sun ✔</strike>
 
-<li> Refactor DRY
+<li><strike> Refactor DRY </strike>
 
-<li> Responsive design for phone
+<li> Framer motion opacity
+<li><strike> Earth atmosphere rotate like Venus </strike>
+<li><strike> Responsive design for phone </strike>
 
-<li> TypeScript support
+<li> TypeScript support to pages but not 3D
 
 
 

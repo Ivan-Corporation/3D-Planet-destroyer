@@ -2,19 +2,19 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Earth } from "./Earth";
-import { TopSection } from "./FrontGround";
-import { DestroyedEarth } from "./DestroyedEarth";
+import { FrontGround } from "../../components/FrontGround";
 import "react-tiger-transition/styles/main.min.css";
-import { Navigation, Route, Screen, Link, fade, glide } from "react-tiger-transition";
+import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
 import { keyframes} from "styled-components"
-import arrowup from '../../assets/img/arrowup.png'
 import arrowbottom from '../../assets/img/arrowbottom.png'
+import arrowup from '../../assets/img/arrowup.png'
 import Loader from '../../Loader'
 import '../../assets/styles/camerabutton.css'
-
+import { Mercury } from './Mercury';
+import { DestroyedMercury } from './DestroyedMercury';
 
 // inject glide styles
+
 
 glide({
   name: 'glide-top',
@@ -38,13 +38,14 @@ const CanvasContainerSmall = styled.div`
   height: 100vh;
 `;
 
+
 const TopSectionContainer = styled.div`
   position: absolute;
   width: 100%;
   height: 200vh;
   top: 0;
   left: 0;
-  background-color: rgb(0, 0, 153, 0.05);
+  background-color: rgb(255, 153, 51, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +57,7 @@ position: absolute;
 
   outline: none;
   border: none;
-  background-color: #d60606;
+  background-color:  #cc0000;
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -112,12 +113,13 @@ const rotate = keyframes`
   }
 `;
 
+
 // Here we create a component that will rotate everything we pass in over two seconds
 const Rotate = styled.div`
   display: inline-block;
   animation: ${rotate} 5s linear infinite alternate;
 
- 
+  font-size: 1.2rem;
 `;
 const HideTopContainer = styled.h3`
   color: #fff;
@@ -128,13 +130,14 @@ const HideTopContainer = styled.h3`
 `;
 
 
-function App() {
+function AppMercury() {
 
   const [destroy, setDestroy] = useState(false)
 
   const handleDestroy = () => {
     setDestroy(true);
   };
+
 
   const [containerVisibility, sethideTopContainer] = useState(false)
 
@@ -145,53 +148,56 @@ function App() {
     sethideTopContainer(false);
   };
 
-
   return (
     <>
-      <HideTopContainer>
+     <HideTopContainer>
         {!containerVisibility ? 
 
-        <div onClick={hideTopContainer} class="button" id="button-7">
+        <div onClick={hideTopContainer} className="button" id="button-7">
         <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
         <p>Look at planet</p>
         </div>
       
       : 
       
-      <div onClick={showTopContainer} class="button" id="button-7">
+      <div onClick={showTopContainer} className="button" id="button-7">
       <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
       <p>Back</p>
       </div>
       }
       </HideTopContainer>
+ 
+ 
+ 
       {!containerVisibility ? <TopSectionContainer>
-    
-      <TopSection/>
+        <FrontGround planet_name={"Mercury"} planet_info={"D♁ (Earth size) - 0,383 \n Km from the sun - 57 910 006"}/>
 
 
 
-      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Mars ♂</p>
+
+      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Venus ♀</p>
       <ArrowUp>
-      <Link to='/mars' transition='glide-bottom' >
+      <Link to='/venus' transition='glide-bottom' >
         <Rotate>
         <img src={arrowbottom} style={{width: '100px' }}/>
         </Rotate></Link></ArrowUp>
-
-        {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
-
-      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Venus ♀</p>
+        <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Sun ☼</p>
       <ArrowBottom>
-      <Link to='/venus' transition='glide-top' >
+      <Link to='/sun' transition='glide-top' >
         <Rotate>
         <img src={arrowup} style={{width: '100px', }}/>
         </Rotate></Link></ArrowBottom>
-      </TopSectionContainer> : ''}
+
+        {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
+
       
+
+  
+      </TopSectionContainer> : ''}
       {!containerVisibility ? <CanvasContainer>
       <Canvas>
         <Suspense fallback={<Loader />}>
-        
-          {!destroy ? <Earth /> : <DestroyedEarth/>}
+          {!destroy ? <Mercury /> : <DestroyedMercury/>}
           
 
           
@@ -201,8 +207,7 @@ function App() {
     <CanvasContainerSmall>
     <Canvas>
       <Suspense fallback={<Loader />}>
-        {!destroy ? <Earth /> : <DestroyedEarth/>}
-        
+        {!destroy ? <Mercury /> : <DestroyedMercury/>}        
 
         
       </Suspense>
@@ -210,8 +215,8 @@ function App() {
   </CanvasContainerSmall>
     }
 
-</>
+    </>  
   );
 }
 
-export default App;
+export default AppMercury;

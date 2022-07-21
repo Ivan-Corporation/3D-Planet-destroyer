@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { TopSection } from "./SaturnFrontGround";
+import { FrontGround } from "../../components/FrontGround";
 import "react-tiger-transition/styles/main.min.css";
 import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
 import { keyframes } from "styled-components"
@@ -153,14 +153,14 @@ function AppSaturn() {
      <HideTopContainer>
         {!containerVisibility ? 
 
-        <div onClick={hideTopContainer} class="button" id="button-7">
+        <div onClick={hideTopContainer} className="button" id="button-7">
         <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
         <p>Look at planet</p>
         </div>
       
       : 
       
-      <div onClick={showTopContainer} class="button" id="button-7">
+      <div onClick={showTopContainer} className="button" id="button-7">
       <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
       <p>Back</p>
       </div>
@@ -170,7 +170,7 @@ function AppSaturn() {
  
  
       {!containerVisibility ? <TopSectionContainer>
-      <TopSection />
+        <FrontGround planet_name={"Saturn"} planet_info={"D♁ (Earth size) - 9,14 \n scale 1 to 4 \n Km from the sun - 1 429 400 028"}/>
 
 
 
