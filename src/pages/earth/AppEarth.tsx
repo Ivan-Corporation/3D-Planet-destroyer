@@ -88,6 +88,9 @@ const ArrowBottom = styled.div`
   &:hover {
     background-color: transparent;
   }
+  @media (max-width: 668px) {
+    margin-bottom: 5%;
+  }
 `;
 const ArrowUp = styled.div`
   position: absolute;

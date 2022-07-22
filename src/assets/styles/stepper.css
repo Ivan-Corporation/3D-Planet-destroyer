@@ -1,0 +1,10 @@
+.stepper_text {
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+.stepper_text:hover {
+    color: bisque;
+}

@@ -89,6 +89,9 @@ const ArrowBottom = styled.div`
   &:hover {
     background-color: transparent;
   }
+  @media (max-width: 668px) {
+    margin-bottom: 5%;
+  }
 `;
 const ArrowUp = styled.div`
   position: absolute;
@@ -156,7 +159,7 @@ function AppPluton() {
 
         <div onClick={hideTopContainer} className="button" id="button-7">
         <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
-        <p>Look at planet</p>
+        <p>Look at "planet"</p>
         </div>
       
       : 

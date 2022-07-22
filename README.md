@@ -12,9 +12,9 @@
 <h2 align='center'>Videos about 3D in this website:</h2>
 <br/>
 
-## EN 🌝 [YouTube video - "I created sun"](https://www.youtube.com/watch?v=DbWTAG9pBoU)
+### EN 🌝 [YouTube video - "I created sun"](https://www.youtube.com/watch?v=DbWTAG9pBoU)
 
-## RU 🌚 [Видео на YouTube - Создаём Плутон](https://www.youtube.com/watch?v=H_OdNo4dxTE)
+### RU 🌚 [Видео на YouTube - Создаём Плутон](https://www.youtube.com/watch?v=H_OdNo4dxTE)
 
 
 <br/>
@@ -37,15 +37,15 @@
 <li><strike> onClick top section hide? ✔</strike>
 <li><strike> Pluto ✔</strike>
 <li><strike> Sun ✔</strike>
-
 <li><strike> Refactor DRY </strike>
-
-<li> Framer motion opacity
+<li><strike> Framer motion opacity </strike>
 <li><strike> Earth atmosphere rotate like Venus </strike>
 <li><strike> Responsive design for phone </strike>
+<li><strike> TypeScript support to pages but not 3D </strike>
 
-<li> TypeScript support to pages but not 3D
 
+<li><strike> Down navigation bottom - mobile responsive (padding bottom more) </strike>
+<li><strike> Check for some stepper (with router-DOM support) in left side? </strike>
 
 
 </ul>
