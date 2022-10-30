@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { FrontGround } from "../../components/FrontGround";
 import "react-tiger-transition/styles/main.min.css";
-import { Navigation, Route, Screen, Link, glide} from "react-tiger-transition";
+import { Navigation, Route, Screen, Link, glide } from "react-tiger-transition";
 import { keyframes } from "styled-components"
 import arrowbottom from '../../assets/img/arrowbottom.png'
 import arrowup from '../../assets/img/arrowup.png'
@@ -12,18 +12,19 @@ import Loader from '../../Loader'
 import '../../assets/styles/camerabutton.css'
 import { Venus } from './Venus';
 import { DestroyedVenus } from './DestroyedVenus';
+import camera from '../../assets/img/camera.png'
 
 // inject glide styles
 
 
 glide({
-  name: 'glide-top',
-  direction: 'top',
+	name: 'glide-top',
+	direction: 'top',
 
 });
 glide({
-  name: 'glide-bottom',
-  direction: 'bottom',
+	name: 'glide-bottom',
+	direction: 'bottom',
 
 });
 
@@ -135,89 +136,89 @@ const HideTopContainer = styled.h3`
 
 function AppVenus() {
 
-  const [destroy, setDestroy] = useState(false)
+	const [destroy, setDestroy] = useState(false)
 
-  const handleDestroy = () => {
-    setDestroy(true);
-  };
-
-
-  const [containerVisibility, sethideTopContainer] = useState(false)
-
-  const hideTopContainer = () => {
-    sethideTopContainer(true);
-  };
-  const showTopContainer = () => {
-    sethideTopContainer(false);
-  };
-
-  return (
-    <>
-     <HideTopContainer>
-        {!containerVisibility ? 
-
-        <div onClick={hideTopContainer} className="button" id="button-7">
-        <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIvlADfXEAAcqk8?format=png&name=small" alt="" /></div>
-        <p>Look at planet</p>
-        </div>
-      
-      : 
-      
-      <div onClick={showTopContainer} className="button" id="button-7">
-      <div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
-      <p>Back</p>
-      </div>
-      }
-      </HideTopContainer>
- 
- 
- 
-      {!containerVisibility ? <TopSectionContainer>
-        <FrontGround planet_name={"Venus"} planet_info={"D♁ (Earth size) - 0,950 \n Km from the sun - 108 199 995"}/>
+	const handleDestroy = () => {
+		setDestroy(true);
+	};
 
 
-      <p style={{textAlign:'center', color: 'white',  fontSize: '32px', fontWeight: '700', paddingTop: '70px'}}>Earth ♁</p>
-      <ArrowUp>
-      <Link to='/earth' transition='glide-bottom' >
-        <Rotate>
-        <img src={arrowbottom} style={{width: '100px' }}/>
-        </Rotate></Link></ArrowUp>
+	const [containerVisibility, sethideTopContainer] = useState(false)
 
-        {!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
+	const hideTopContainer = () => {
+		sethideTopContainer(true);
+	};
+	const showTopContainer = () => {
+		sethideTopContainer(false);
+	};
 
-      <p style={{textAlign:'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position:'absolute'}}>Mercury ☿</p>
-      <ArrowBottom>
-      <Link to='/mercury' transition='glide-top' >
-        <Rotate>
-        <img src={arrowup} style={{width: '100px', }}/>
-        </Rotate></Link></ArrowBottom>
+	return (
+		<>
+			<HideTopContainer>
+				{!containerVisibility ?
 
-  
-      </TopSectionContainer> : ''}
-      {!containerVisibility ? <CanvasContainer>
-      <Canvas>
-        <Suspense fallback={<Loader />}>
-          {!destroy ? <Venus /> : <DestroyedVenus/>}
-          
+					<div onClick={hideTopContainer} className="button" id="button-7">
+						<div id="dub-arrow"><img src={camera} alt="" /></div>
+						<p>Look at planet</p>
+					</div>
 
-          
-        </Suspense>
-      </Canvas>
-    </CanvasContainer> : 
-    <CanvasContainerSmall>
-    <Canvas>
-      <Suspense fallback={<Loader />}>
-        {!destroy ? <Venus /> : <DestroyedVenus/>}
-        
+					:
 
-        
-      </Suspense>
-    </Canvas>
-  </CanvasContainerSmall>
-    }
+					<div onClick={showTopContainer} className="button" id="button-7">
+						<div id="dub-arrow"><img src="https://pbs.twimg.com/media/FIv7mtRXwAIJJCT?format=png&name=large" alt="" /></div>
+						<p>Back</p>
+					</div>
+				}
+			</HideTopContainer>
 
-    </>  
-  );
+
+
+			{!containerVisibility ? <TopSectionContainer>
+				<FrontGround planet_name={"Venus"} planet_info={"D♁ (Earth size) - 0,950 \n Km from the sun - 108 199 995"} />
+
+
+				<p style={{ textAlign: 'center', color: 'white', fontSize: '32px', fontWeight: '700', paddingTop: '70px' }}>Earth ♁</p>
+				<ArrowUp>
+					<Link to='/earth' transition='glide-bottom' >
+						<Rotate>
+							<img src={arrowbottom} style={{ width: '100px' }} />
+						</Rotate></Link></ArrowUp>
+
+				{!destroy ? <DestroyButton onClick={handleDestroy}>Destroy</DestroyButton> : ''}
+
+				<p style={{ textAlign: 'center', color: 'white', fontSize: '32px', fontWeight: '700', bottom: '60px', position: 'absolute' }}>Mercury ☿</p>
+				<ArrowBottom>
+					<Link to='/mercury' transition='glide-top' >
+						<Rotate>
+							<img src={arrowup} style={{ width: '100px', }} />
+						</Rotate></Link></ArrowBottom>
+
+
+			</TopSectionContainer> : ''}
+			{!containerVisibility ? <CanvasContainer>
+				<Canvas>
+					<Suspense fallback={<Loader />}>
+						{!destroy ? <Venus /> : <DestroyedVenus />}
+
+
+
+					</Suspense>
+				</Canvas>
+			</CanvasContainer> :
+				<CanvasContainerSmall>
+					<Canvas>
+						<Suspense fallback={<Loader />}>
+							{!destroy ? <Venus /> : <DestroyedVenus />}
+
+
+
+						</Suspense>
+					</Canvas>
+				</CanvasContainerSmall>
+			}
+
+		</>
+	);
 }
 
 export default AppVenus;
