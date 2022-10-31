@@ -28,6 +28,8 @@
 
 .button-80:not(:disabled):hover {
 	transform: scale(1.05);
+	background: #212121;
+	color: rgb(245, 245, 245);
 }
 
 .button-80:not(:disabled):hover:active {

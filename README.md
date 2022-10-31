@@ -2,7 +2,7 @@
 <h1 align='center'> 3D Planets destroyer 🌏</h1>
 <h3 align='center'>Project with very tricky animated transition and 3D support that can help you visualize our solar system in details ☀️, and even zoom on the planets (textures from NASA)</h3>
 <br/>
-<div align='center'><img  src='./public/logo512.png' width='250px'/></div>
+<div align='center'><img  src='./public/icons/icon-512x512.png' width='250px'/></div>
 
 
 <br/>
@@ -14,7 +14,7 @@
 
 ### EN 🌝 [YouTube video - "I created sun"](https://www.youtube.com/watch?v=DbWTAG9pBoU)
 
-### RU 🌚 [Видео на YouTube - Создаём Плутон](https://www.youtube.com/watch?v=H_OdNo4dxTE)
+### RU 🌚 [Видео на YouTube - Создаём Плутон](https://www.youtube.com/watch?v=v73BxVUzjYQ)
 
 
 <br/>
