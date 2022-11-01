@@ -4,12 +4,12 @@ importScripts('https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compa
 
 // Initialize the Firebase app in the service worker by passing the generated config
 const firebaseConfig = {
-	apiKey: "AIzaSyDJnJfRO7xSRz6Np7ODDubyBS23er_xSWY",
-	authDomain: "d-planet-destroyer.firebaseapp.com",
-	projectId: "d-planet-destroyer",
-	storageBucket: "d-planet-destroyer.appspot.com",
-	messagingSenderId: "80201482298",
-	appId: "1:80201482298:web:2c72c6267e15ce3569b503"
+	apiKey: "AIzaSyBrWo0DjvnmMcP25bFmkuS37LdgeQ9_vAk",
+	authDomain: "planet-destroyer-afa60.firebaseapp.com",
+	projectId: "planet-destroyer-afa60",
+	storageBucket: "planet-destroyer-afa60.appspot.com",
+	messagingSenderId: "996645222406",
+	appId: "1:996645222406:web:f041c76ac812a818522b87"
 };
 
 firebase.initializeApp(firebaseConfig);

@@ -2,19 +2,19 @@ import { initializeApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
 var firebaseConfig = {
-	apiKey: "AIzaSyDJnJfRO7xSRz6Np7ODDubyBS23er_xSWY",
-	authDomain: "d-planet-destroyer.firebaseapp.com",
-	projectId: "d-planet-destroyer",
-	storageBucket: "d-planet-destroyer.appspot.com",
-	messagingSenderId: "80201482298",
-	appId: "1:80201482298:web:2c72c6267e15ce3569b503"
+	apiKey: "AIzaSyBrWo0DjvnmMcP25bFmkuS37LdgeQ9_vAk",
+	authDomain: "planet-destroyer-afa60.firebaseapp.com",
+	projectId: "planet-destroyer-afa60",
+	storageBucket: "planet-destroyer-afa60.appspot.com",
+	messagingSenderId: "996645222406",
+	appId: "1:996645222406:web:f041c76ac812a818522b87"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
 const messaging = getMessaging(firebaseApp);
 
 export const fetchToken = (setTokenFound) => {
-	return getToken(messaging, { vapidKey: 'BCxk_PUwLb1CpAfu-Dd6gCfftS6Pa3pIPABIUie-UG4nsEyE1MI8yrOLNuTlSnf48WdYXtc1aZiScaUwPsSXPyw' }).then((currentToken) => {
+	return getToken(messaging, { vapidKey: 'BBEd5zoGBAvFAPPW4mYhgSawRe_6V5Ox7sQP38-Oz4rT8vZ0dqc6jmE-8Pbn4uaF-K4SjBzo00IOKvxXfx3b9Fc' }).then((currentToken) => {
 		if (currentToken) {
 			console.log('current token for client: ', currentToken);
 			setTokenFound(true);

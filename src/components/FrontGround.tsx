@@ -7,6 +7,7 @@ import '../assets/styles/stepper.css'
 import React, { useState } from "react";
 import '../assets/styles/stepperButton.css'
 import { RepositoryMetrics } from 'repository-metrics';
+import { fetchToken, onMessageListener } from '../firebase';
 
 const TopSectionContainer = styled.div`
   position: absolute;
@@ -129,6 +130,16 @@ const PlanetsLinks = [
 
 export function FrontGround({ planet_name, planet_info }: FrontGroundProps) {
 
+
+	const [isTokenFound, setTokenFound] = useState(false);
+	fetchToken(setTokenFound);
+
+	onMessageListener().then(payload => {
+		console.log(payload);
+	}).catch(err => console.log('failed: ', err));
+
+
+
 	const [stepperShow, setStepperShow] = useState(false)
 
 	const toggleStepper = () => {
@@ -152,6 +163,8 @@ export function FrontGround({ planet_name, planet_info }: FrontGroundProps) {
 				<Logo>{planet_name}</Logo>
 
 				<Slogan>{planet_info}
+					{isTokenFound && <div style={{ fontSize: '12px' }}> Notification system enabled 🔔</div>}
+					{!isTokenFound && <div style={{ fontSize: '12px' }}> Notification system disabled 🔕 </div>}
 				</Slogan>
 
 				<button className="button-80" role="button" onClick={toggleStepper}>Navigation 🪐</button>
