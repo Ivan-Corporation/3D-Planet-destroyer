@@ -25,6 +25,14 @@
 <img src='./readme_images/3.png'>
 <img src='./readme_images/4.png'>
 <img src='./readme_images/5.png'>
+
+<h1 align='center'>PWA</h1>
+<img src='./desktop.png'>
+<img src='./desktop2.png'>
+<hr/>
+<img src='./mobile.jpg'>
+<img src='./mobile2.jpg'>
+
 </div>
 
 
