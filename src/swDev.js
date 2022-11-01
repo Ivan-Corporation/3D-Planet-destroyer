@@ -1,7 +1,7 @@
 export default function swDev() {
 	function determineAppServerKey() {
 		const vapidPublicKey =
-			"BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo";
+			"BCxk_PUwLb1CpAfu-Dd6gCfftS6Pa3pIPABIUie-UG4nsEyE1MI8yrOLNuTlSnf48WdYXtc1aZiScaUwPsSXPyw";
 		return urlBase64ToUint8Array(vapidPublicKey);
 	}
 
