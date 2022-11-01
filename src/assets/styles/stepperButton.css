@@ -1,13 +1,15 @@
 /* CSS */
 .button-80 {
 	margin-top: 1%;
-	background: #fff;
+	background: #212121;
+
 	backface-visibility: hidden;
 	border-radius: .375rem;
 	border-style: solid;
 	border-width: .045rem;
 	box-sizing: border-box;
-	color: #212121;
+	color: rgb(245, 245, 245);
+
 	cursor: pointer;
 	display: inline-block;
 	font-family: Circular, Helvetica, sans-serif;
@@ -28,8 +30,8 @@
 
 .button-80:not(:disabled):hover {
 	transform: scale(1.05);
-	background: #212121;
-	color: rgb(245, 245, 245);
+	background: #fff;
+	color: #212121;
 }
 
 .button-80:not(:disabled):hover:active {
